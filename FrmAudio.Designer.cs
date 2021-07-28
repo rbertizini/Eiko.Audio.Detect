@@ -43,6 +43,15 @@ namespace Eiko.Audio.Detect
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.timeRefresh = new System.Windows.Forms.Timer(this.components);
+            this.tgsSens = new JCS.ToggleSwitch();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtRefresh = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtMemoria = new System.Windows.Forms.TextBox();
+            this.txtPeak = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picAlert)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,12 +174,101 @@ namespace Eiko.Audio.Detect
             this.timeRefresh.Interval = 1000;
             this.timeRefresh.Tick += new System.EventHandler(this.timeRefresh_Tick);
             // 
+            // tgsSens
+            // 
+            this.tgsSens.Location = new System.Drawing.Point(91, 348);
+            this.tgsSens.Name = "tgsSens";
+            this.tgsSens.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tgsSens.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tgsSens.Size = new System.Drawing.Size(78, 23);
+            this.tgsSens.TabIndex = 17;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(16, 273);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 13);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Tempo resfresh (min):";
+            // 
+            // txtRefresh
+            // 
+            this.txtRefresh.Location = new System.Drawing.Point(132, 296);
+            this.txtRefresh.Name = "txtRefresh";
+            this.txtRefresh.Size = new System.Drawing.Size(37, 20);
+            this.txtRefresh.TabIndex = 19;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(16, 299);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(110, 13);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Tempo memória (min):";
+            // 
+            // txtMemoria
+            // 
+            this.txtMemoria.Location = new System.Drawing.Point(132, 270);
+            this.txtMemoria.Name = "txtMemoria";
+            this.txtMemoria.Size = new System.Drawing.Size(37, 20);
+            this.txtMemoria.TabIndex = 21;
+            // 
+            // txtPeak
+            // 
+            this.txtPeak.Location = new System.Drawing.Point(132, 322);
+            this.txtPeak.Name = "txtPeak";
+            this.txtPeak.Size = new System.Drawing.Size(37, 20);
+            this.txtPeak.TabIndex = 22;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(16, 325);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(109, 13);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Limite peak (decimal):";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(16, 354);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 13);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Sensibilidade:";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(35, 378);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(117, 23);
+            this.btnSave.TabIndex = 25;
+            this.btnSave.Text = "Atualizar e reiniciar";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // FrmAudio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(187, 224);
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.ClientSize = new System.Drawing.Size(187, 409);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtPeak);
+            this.Controls.Add(this.txtMemoria);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtRefresh);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.tgsSens);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnConf);
@@ -207,6 +305,15 @@ namespace Eiko.Audio.Detect
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timeRefresh;
+        private JCS.ToggleSwitch tgsSens;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtRefresh;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtMemoria;
+        private System.Windows.Forms.TextBox txtPeak;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnSave;
     }
 }
 

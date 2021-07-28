@@ -33,8 +33,19 @@
             this.InfoLabel = new System.Windows.Forms.Label();
             this.DemoTabControl = new System.Windows.Forms.TabControl();
             this.StylesTabPage = new System.Windows.Forms.TabPage();
+            this.label30 = new System.Windows.Forms.Label();
+            this.PlainAndSimpleStyleToggleSwitch = new JCS.ToggleSwitch();
             this.OSXStyleOnLabel = new System.Windows.Forms.Label();
             this.OSXStyleOffLabel = new System.Windows.Forms.Label();
+            this.FancyStyleToggleSwitch = new JCS.ToggleSwitch();
+            this.OSXStyleToggleSwitch = new JCS.ToggleSwitch();
+            this.CarbonStyleToggleSwitch = new JCS.ToggleSwitch();
+            this.ModernStyleToggleSwitch = new JCS.ToggleSwitch();
+            this.IphoneStyleToggleSwitch = new JCS.ToggleSwitch();
+            this.BrushedMetalStyleToggleSwitch = new JCS.ToggleSwitch();
+            this.AndroidStyleToggleSwitch = new JCS.ToggleSwitch();
+            this.IOS5StyleToggleSwitch = new JCS.ToggleSwitch();
+            this.MetroStyleToggleSwitch = new JCS.ToggleSwitch();
             this.OSXStyleLabel = new System.Windows.Forms.Label();
             this.ModernStyleLabel = new System.Windows.Forms.Label();
             this.IphoneStyleLabel = new System.Windows.Forms.Label();
@@ -70,7 +81,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.AllowUserChangeLabel = new System.Windows.Forms.Label();
+            this.ToggleOnClickToggleSwitch = new JCS.ToggleSwitch();
+            this.ThresholdPercentageToggleSwitch = new JCS.ToggleSwitch();
+            this.GrayWhenDisabledToggleSwitch2 = new JCS.ToggleSwitch();
+            this.GrayWhenDisabledToggleSwitch1 = new JCS.ToggleSwitch();
+            this.SlowAnimationToggleSwitch = new JCS.ToggleSwitch();
+            this.FastAnimationToggleSwitch = new JCS.ToggleSwitch();
+            this.NoAnimationToggleSwitch = new JCS.ToggleSwitch();
+            this.AllowUserChangeToggleSwitch2 = new JCS.ToggleSwitch();
+            this.AllowUserChangeToggleSwitch1 = new JCS.ToggleSwitch();
             this.SpecialCustomizationsTabPage = new System.Windows.Forms.TabPage();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.CustomizedPlainAndSimpleToggleSwitch = new JCS.ToggleSwitch();
+            this.NormalPlainAndSimpleToggleSwitch = new JCS.ToggleSwitch();
             this.label29 = new System.Windows.Forms.Label();
             this.AnimatedGifPictureBox = new System.Windows.Forms.PictureBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -82,27 +106,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.PlaygroundTabPage = new System.Windows.Forms.TabPage();
-            this.SimulateRestartBackgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this.PlainAndSimpleStyleToggleSwitch = new JCS.ToggleSwitch();
-            this.FancyStyleToggleSwitch = new JCS.ToggleSwitch();
-            this.OSXStyleToggleSwitch = new JCS.ToggleSwitch();
-            this.CarbonStyleToggleSwitch = new JCS.ToggleSwitch();
-            this.ModernStyleToggleSwitch = new JCS.ToggleSwitch();
-            this.IphoneStyleToggleSwitch = new JCS.ToggleSwitch();
-            this.BrushedMetalStyleToggleSwitch = new JCS.ToggleSwitch();
-            this.AndroidStyleToggleSwitch = new JCS.ToggleSwitch();
-            this.IOS5StyleToggleSwitch = new JCS.ToggleSwitch();
-            this.MetroStyleToggleSwitch = new JCS.ToggleSwitch();
-            this.ToggleOnClickToggleSwitch = new JCS.ToggleSwitch();
-            this.ThresholdPercentageToggleSwitch = new JCS.ToggleSwitch();
-            this.GrayWhenDisabledToggleSwitch2 = new JCS.ToggleSwitch();
-            this.GrayWhenDisabledToggleSwitch1 = new JCS.ToggleSwitch();
-            this.SlowAnimationToggleSwitch = new JCS.ToggleSwitch();
-            this.FastAnimationToggleSwitch = new JCS.ToggleSwitch();
-            this.NoAnimationToggleSwitch = new JCS.ToggleSwitch();
-            this.AllowUserChangeToggleSwitch2 = new JCS.ToggleSwitch();
-            this.AllowUserChangeToggleSwitch1 = new JCS.ToggleSwitch();
             this.AdvancedBehaviorFancyToggleSwitch = new JCS.ToggleSwitch();
             this.CustomizedFancyToggleSwitch = new JCS.ToggleSwitch();
             this.NormalFancyToggleSwitch = new JCS.ToggleSwitch();
@@ -110,13 +113,10 @@
             this.NormalIOS5ToggleSwitch = new JCS.ToggleSwitch();
             this.CustomizedMetroToggleSwitch = new JCS.ToggleSwitch();
             this.NormalMetroToggleSwitch = new JCS.ToggleSwitch();
+            this.PlaygroundTabPage = new System.Windows.Forms.TabPage();
             this.PlaygroundToggleSwitch = new JCS.ToggleSwitch();
             this.PlaygroundPropertyGrid = new System.Windows.Forms.PropertyGrid();
-            this.label30 = new System.Windows.Forms.Label();
-            this.NormalPlainAndSimpleToggleSwitch = new JCS.ToggleSwitch();
-            this.CustomizedPlainAndSimpleToggleSwitch = new JCS.ToggleSwitch();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
+            this.SimulateRestartBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.TopPanel.SuspendLayout();
             this.DemoTabControl.SuspendLayout();
             this.StylesTabPage.SuspendLayout();
@@ -192,6 +192,25 @@
             this.StylesTabPage.Text = "Styles";
             this.StylesTabPage.UseVisualStyleBackColor = true;
             // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(161, 372);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(115, 13);
+            this.label30.TabIndex = 22;
+            this.label30.Text = "Style = PlainAndSimple";
+            // 
+            // PlainAndSimpleStyleToggleSwitch
+            // 
+            this.PlainAndSimpleStyleToggleSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.PlainAndSimpleStyleToggleSwitch.Location = new System.Drawing.Point(164, 403);
+            this.PlainAndSimpleStyleToggleSwitch.Name = "PlainAndSimpleStyleToggleSwitch";
+            this.PlainAndSimpleStyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlainAndSimpleStyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlainAndSimpleStyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
+            this.PlainAndSimpleStyleToggleSwitch.TabIndex = 21;
+            // 
             // OSXStyleOnLabel
             // 
             this.OSXStyleOnLabel.AutoSize = true;
@@ -211,6 +230,88 @@
             this.OSXStyleOffLabel.Size = new System.Drawing.Size(38, 17);
             this.OSXStyleOffLabel.TabIndex = 18;
             this.OSXStyleOffLabel.Text = "OFF";
+            // 
+            // FancyStyleToggleSwitch
+            // 
+            this.FancyStyleToggleSwitch.Location = new System.Drawing.Point(626, 309);
+            this.FancyStyleToggleSwitch.Name = "FancyStyleToggleSwitch";
+            this.FancyStyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FancyStyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FancyStyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
+            this.FancyStyleToggleSwitch.TabIndex = 17;
+            // 
+            // OSXStyleToggleSwitch
+            // 
+            this.OSXStyleToggleSwitch.Location = new System.Drawing.Point(434, 309);
+            this.OSXStyleToggleSwitch.Name = "OSXStyleToggleSwitch";
+            this.OSXStyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OSXStyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OSXStyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
+            this.OSXStyleToggleSwitch.TabIndex = 16;
+            // 
+            // CarbonStyleToggleSwitch
+            // 
+            this.CarbonStyleToggleSwitch.Location = new System.Drawing.Point(164, 309);
+            this.CarbonStyleToggleSwitch.Name = "CarbonStyleToggleSwitch";
+            this.CarbonStyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CarbonStyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CarbonStyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
+            this.CarbonStyleToggleSwitch.TabIndex = 15;
+            // 
+            // ModernStyleToggleSwitch
+            // 
+            this.ModernStyleToggleSwitch.Location = new System.Drawing.Point(626, 188);
+            this.ModernStyleToggleSwitch.Name = "ModernStyleToggleSwitch";
+            this.ModernStyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ModernStyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ModernStyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
+            this.ModernStyleToggleSwitch.TabIndex = 14;
+            // 
+            // IphoneStyleToggleSwitch
+            // 
+            this.IphoneStyleToggleSwitch.Location = new System.Drawing.Point(395, 188);
+            this.IphoneStyleToggleSwitch.Name = "IphoneStyleToggleSwitch";
+            this.IphoneStyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IphoneStyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IphoneStyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
+            this.IphoneStyleToggleSwitch.TabIndex = 13;
+            // 
+            // BrushedMetalStyleToggleSwitch
+            // 
+            this.BrushedMetalStyleToggleSwitch.Location = new System.Drawing.Point(164, 188);
+            this.BrushedMetalStyleToggleSwitch.Name = "BrushedMetalStyleToggleSwitch";
+            this.BrushedMetalStyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BrushedMetalStyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BrushedMetalStyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
+            this.BrushedMetalStyleToggleSwitch.TabIndex = 12;
+            // 
+            // AndroidStyleToggleSwitch
+            // 
+            this.AndroidStyleToggleSwitch.Location = new System.Drawing.Point(626, 79);
+            this.AndroidStyleToggleSwitch.Name = "AndroidStyleToggleSwitch";
+            this.AndroidStyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AndroidStyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AndroidStyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
+            this.AndroidStyleToggleSwitch.TabIndex = 11;
+            // 
+            // IOS5StyleToggleSwitch
+            // 
+            this.IOS5StyleToggleSwitch.Location = new System.Drawing.Point(395, 79);
+            this.IOS5StyleToggleSwitch.Name = "IOS5StyleToggleSwitch";
+            this.IOS5StyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IOS5StyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IOS5StyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
+            this.IOS5StyleToggleSwitch.TabIndex = 10;
+            this.IOS5StyleToggleSwitch.CheckedChanged += new JCS.ToggleSwitch.CheckedChangedDelegate(this.IOS5StyleToggleSwitch_CheckedChanged);
+            // 
+            // MetroStyleToggleSwitch
+            // 
+            this.MetroStyleToggleSwitch.Location = new System.Drawing.Point(164, 79);
+            this.MetroStyleToggleSwitch.Name = "MetroStyleToggleSwitch";
+            this.MetroStyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MetroStyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MetroStyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
+            this.MetroStyleToggleSwitch.TabIndex = 9;
             // 
             // OSXStyleLabel
             // 
@@ -599,6 +700,87 @@
             this.AllowUserChangeLabel.TabIndex = 0;
             this.AllowUserChangeLabel.Text = "AllowUserChange (boolean)";
             // 
+            // ToggleOnClickToggleSwitch
+            // 
+            this.ToggleOnClickToggleSwitch.Location = new System.Drawing.Point(11, 419);
+            this.ToggleOnClickToggleSwitch.Name = "ToggleOnClickToggleSwitch";
+            this.ToggleOnClickToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToggleOnClickToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToggleOnClickToggleSwitch.Size = new System.Drawing.Size(50, 19);
+            this.ToggleOnClickToggleSwitch.TabIndex = 38;
+            // 
+            // ThresholdPercentageToggleSwitch
+            // 
+            this.ThresholdPercentageToggleSwitch.Location = new System.Drawing.Point(11, 336);
+            this.ThresholdPercentageToggleSwitch.Name = "ThresholdPercentageToggleSwitch";
+            this.ThresholdPercentageToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThresholdPercentageToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThresholdPercentageToggleSwitch.Size = new System.Drawing.Size(50, 19);
+            this.ThresholdPercentageToggleSwitch.TabIndex = 33;
+            // 
+            // GrayWhenDisabledToggleSwitch2
+            // 
+            this.GrayWhenDisabledToggleSwitch2.Location = new System.Drawing.Point(11, 262);
+            this.GrayWhenDisabledToggleSwitch2.Name = "GrayWhenDisabledToggleSwitch2";
+            this.GrayWhenDisabledToggleSwitch2.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GrayWhenDisabledToggleSwitch2.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GrayWhenDisabledToggleSwitch2.Size = new System.Drawing.Size(50, 19);
+            this.GrayWhenDisabledToggleSwitch2.TabIndex = 27;
+            // 
+            // GrayWhenDisabledToggleSwitch1
+            // 
+            this.GrayWhenDisabledToggleSwitch1.Location = new System.Drawing.Point(11, 228);
+            this.GrayWhenDisabledToggleSwitch1.Name = "GrayWhenDisabledToggleSwitch1";
+            this.GrayWhenDisabledToggleSwitch1.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GrayWhenDisabledToggleSwitch1.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GrayWhenDisabledToggleSwitch1.Size = new System.Drawing.Size(50, 19);
+            this.GrayWhenDisabledToggleSwitch1.TabIndex = 26;
+            // 
+            // SlowAnimationToggleSwitch
+            // 
+            this.SlowAnimationToggleSwitch.Location = new System.Drawing.Point(510, 130);
+            this.SlowAnimationToggleSwitch.Name = "SlowAnimationToggleSwitch";
+            this.SlowAnimationToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SlowAnimationToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SlowAnimationToggleSwitch.Size = new System.Drawing.Size(50, 19);
+            this.SlowAnimationToggleSwitch.TabIndex = 22;
+            // 
+            // FastAnimationToggleSwitch
+            // 
+            this.FastAnimationToggleSwitch.Location = new System.Drawing.Point(252, 130);
+            this.FastAnimationToggleSwitch.Name = "FastAnimationToggleSwitch";
+            this.FastAnimationToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FastAnimationToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FastAnimationToggleSwitch.Size = new System.Drawing.Size(50, 19);
+            this.FastAnimationToggleSwitch.TabIndex = 20;
+            // 
+            // NoAnimationToggleSwitch
+            // 
+            this.NoAnimationToggleSwitch.Location = new System.Drawing.Point(11, 130);
+            this.NoAnimationToggleSwitch.Name = "NoAnimationToggleSwitch";
+            this.NoAnimationToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoAnimationToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoAnimationToggleSwitch.Size = new System.Drawing.Size(50, 19);
+            this.NoAnimationToggleSwitch.TabIndex = 18;
+            // 
+            // AllowUserChangeToggleSwitch2
+            // 
+            this.AllowUserChangeToggleSwitch2.Location = new System.Drawing.Point(11, 60);
+            this.AllowUserChangeToggleSwitch2.Name = "AllowUserChangeToggleSwitch2";
+            this.AllowUserChangeToggleSwitch2.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AllowUserChangeToggleSwitch2.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AllowUserChangeToggleSwitch2.Size = new System.Drawing.Size(50, 19);
+            this.AllowUserChangeToggleSwitch2.TabIndex = 11;
+            // 
+            // AllowUserChangeToggleSwitch1
+            // 
+            this.AllowUserChangeToggleSwitch1.Location = new System.Drawing.Point(11, 35);
+            this.AllowUserChangeToggleSwitch1.Name = "AllowUserChangeToggleSwitch1";
+            this.AllowUserChangeToggleSwitch1.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AllowUserChangeToggleSwitch1.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AllowUserChangeToggleSwitch1.Size = new System.Drawing.Size(50, 19);
+            this.AllowUserChangeToggleSwitch1.TabIndex = 10;
+            // 
             // SpecialCustomizationsTabPage
             // 
             this.SpecialCustomizationsTabPage.Controls.Add(this.label31);
@@ -629,6 +811,44 @@
             this.SpecialCustomizationsTabPage.TabIndex = 2;
             this.SpecialCustomizationsTabPage.Text = "Special Customizations";
             this.SpecialCustomizationsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(349, 193);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(61, 13);
+            this.label31.TabIndex = 37;
+            this.label31.Text = "Customized";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(126, 193);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(40, 13);
+            this.label32.TabIndex = 36;
+            this.label32.Text = "Normal";
+            // 
+            // CustomizedPlainAndSimpleToggleSwitch
+            // 
+            this.CustomizedPlainAndSimpleToggleSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.CustomizedPlainAndSimpleToggleSwitch.Location = new System.Drawing.Point(238, 187);
+            this.CustomizedPlainAndSimpleToggleSwitch.Name = "CustomizedPlainAndSimpleToggleSwitch";
+            this.CustomizedPlainAndSimpleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomizedPlainAndSimpleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomizedPlainAndSimpleToggleSwitch.Size = new System.Drawing.Size(50, 19);
+            this.CustomizedPlainAndSimpleToggleSwitch.TabIndex = 35;
+            // 
+            // NormalPlainAndSimpleToggleSwitch
+            // 
+            this.NormalPlainAndSimpleToggleSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.NormalPlainAndSimpleToggleSwitch.Location = new System.Drawing.Point(22, 187);
+            this.NormalPlainAndSimpleToggleSwitch.Name = "NormalPlainAndSimpleToggleSwitch";
+            this.NormalPlainAndSimpleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NormalPlainAndSimpleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NormalPlainAndSimpleToggleSwitch.Size = new System.Drawing.Size(50, 19);
+            this.NormalPlainAndSimpleToggleSwitch.TabIndex = 34;
             // 
             // label29
             // 
@@ -738,194 +958,6 @@
             this.label20.TabIndex = 1;
             this.label20.Text = "Color Customization";
             // 
-            // PlaygroundTabPage
-            // 
-            this.PlaygroundTabPage.Controls.Add(this.PlaygroundToggleSwitch);
-            this.PlaygroundTabPage.Controls.Add(this.PlaygroundPropertyGrid);
-            this.PlaygroundTabPage.Location = new System.Drawing.Point(4, 22);
-            this.PlaygroundTabPage.Name = "PlaygroundTabPage";
-            this.PlaygroundTabPage.Size = new System.Drawing.Size(870, 479);
-            this.PlaygroundTabPage.TabIndex = 3;
-            this.PlaygroundTabPage.Text = "Playground";
-            this.PlaygroundTabPage.UseVisualStyleBackColor = true;
-            // 
-            // SimulateRestartBackgroundWorker
-            // 
-            this.SimulateRestartBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.SimulateRestartBackgroundWorker_DoWork);
-            this.SimulateRestartBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.SimulateRestartBackgroundWorker_RunWorkerCompleted);
-            // 
-            // PlainAndSimpleStyleToggleSwitch
-            // 
-            this.PlainAndSimpleStyleToggleSwitch.BackColor = System.Drawing.Color.Transparent;
-            this.PlainAndSimpleStyleToggleSwitch.Location = new System.Drawing.Point(164, 403);
-            this.PlainAndSimpleStyleToggleSwitch.Name = "PlainAndSimpleStyleToggleSwitch";
-            this.PlainAndSimpleStyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlainAndSimpleStyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlainAndSimpleStyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
-            this.PlainAndSimpleStyleToggleSwitch.TabIndex = 21;
-            // 
-            // FancyStyleToggleSwitch
-            // 
-            this.FancyStyleToggleSwitch.Location = new System.Drawing.Point(626, 309);
-            this.FancyStyleToggleSwitch.Name = "FancyStyleToggleSwitch";
-            this.FancyStyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FancyStyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FancyStyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
-            this.FancyStyleToggleSwitch.TabIndex = 17;
-            // 
-            // OSXStyleToggleSwitch
-            // 
-            this.OSXStyleToggleSwitch.Location = new System.Drawing.Point(434, 309);
-            this.OSXStyleToggleSwitch.Name = "OSXStyleToggleSwitch";
-            this.OSXStyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OSXStyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OSXStyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
-            this.OSXStyleToggleSwitch.TabIndex = 16;
-            // 
-            // CarbonStyleToggleSwitch
-            // 
-            this.CarbonStyleToggleSwitch.Location = new System.Drawing.Point(164, 309);
-            this.CarbonStyleToggleSwitch.Name = "CarbonStyleToggleSwitch";
-            this.CarbonStyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CarbonStyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CarbonStyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
-            this.CarbonStyleToggleSwitch.TabIndex = 15;
-            // 
-            // ModernStyleToggleSwitch
-            // 
-            this.ModernStyleToggleSwitch.Location = new System.Drawing.Point(626, 188);
-            this.ModernStyleToggleSwitch.Name = "ModernStyleToggleSwitch";
-            this.ModernStyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ModernStyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ModernStyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
-            this.ModernStyleToggleSwitch.TabIndex = 14;
-            // 
-            // IphoneStyleToggleSwitch
-            // 
-            this.IphoneStyleToggleSwitch.Location = new System.Drawing.Point(395, 188);
-            this.IphoneStyleToggleSwitch.Name = "IphoneStyleToggleSwitch";
-            this.IphoneStyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IphoneStyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IphoneStyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
-            this.IphoneStyleToggleSwitch.TabIndex = 13;
-            // 
-            // BrushedMetalStyleToggleSwitch
-            // 
-            this.BrushedMetalStyleToggleSwitch.Location = new System.Drawing.Point(164, 188);
-            this.BrushedMetalStyleToggleSwitch.Name = "BrushedMetalStyleToggleSwitch";
-            this.BrushedMetalStyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BrushedMetalStyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BrushedMetalStyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
-            this.BrushedMetalStyleToggleSwitch.TabIndex = 12;
-            // 
-            // AndroidStyleToggleSwitch
-            // 
-            this.AndroidStyleToggleSwitch.Location = new System.Drawing.Point(626, 79);
-            this.AndroidStyleToggleSwitch.Name = "AndroidStyleToggleSwitch";
-            this.AndroidStyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AndroidStyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AndroidStyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
-            this.AndroidStyleToggleSwitch.TabIndex = 11;
-            // 
-            // IOS5StyleToggleSwitch
-            // 
-            this.IOS5StyleToggleSwitch.Location = new System.Drawing.Point(395, 79);
-            this.IOS5StyleToggleSwitch.Name = "IOS5StyleToggleSwitch";
-            this.IOS5StyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IOS5StyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IOS5StyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
-            this.IOS5StyleToggleSwitch.TabIndex = 10;
-            // 
-            // MetroStyleToggleSwitch
-            // 
-            this.MetroStyleToggleSwitch.Location = new System.Drawing.Point(164, 79);
-            this.MetroStyleToggleSwitch.Name = "MetroStyleToggleSwitch";
-            this.MetroStyleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MetroStyleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MetroStyleToggleSwitch.Size = new System.Drawing.Size(50, 19);
-            this.MetroStyleToggleSwitch.TabIndex = 9;
-            // 
-            // ToggleOnClickToggleSwitch
-            // 
-            this.ToggleOnClickToggleSwitch.Location = new System.Drawing.Point(11, 419);
-            this.ToggleOnClickToggleSwitch.Name = "ToggleOnClickToggleSwitch";
-            this.ToggleOnClickToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ToggleOnClickToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ToggleOnClickToggleSwitch.Size = new System.Drawing.Size(50, 19);
-            this.ToggleOnClickToggleSwitch.TabIndex = 38;
-            // 
-            // ThresholdPercentageToggleSwitch
-            // 
-            this.ThresholdPercentageToggleSwitch.Location = new System.Drawing.Point(11, 336);
-            this.ThresholdPercentageToggleSwitch.Name = "ThresholdPercentageToggleSwitch";
-            this.ThresholdPercentageToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThresholdPercentageToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThresholdPercentageToggleSwitch.Size = new System.Drawing.Size(50, 19);
-            this.ThresholdPercentageToggleSwitch.TabIndex = 33;
-            // 
-            // GrayWhenDisabledToggleSwitch2
-            // 
-            this.GrayWhenDisabledToggleSwitch2.Location = new System.Drawing.Point(11, 262);
-            this.GrayWhenDisabledToggleSwitch2.Name = "GrayWhenDisabledToggleSwitch2";
-            this.GrayWhenDisabledToggleSwitch2.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GrayWhenDisabledToggleSwitch2.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GrayWhenDisabledToggleSwitch2.Size = new System.Drawing.Size(50, 19);
-            this.GrayWhenDisabledToggleSwitch2.TabIndex = 27;
-            // 
-            // GrayWhenDisabledToggleSwitch1
-            // 
-            this.GrayWhenDisabledToggleSwitch1.Location = new System.Drawing.Point(11, 228);
-            this.GrayWhenDisabledToggleSwitch1.Name = "GrayWhenDisabledToggleSwitch1";
-            this.GrayWhenDisabledToggleSwitch1.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GrayWhenDisabledToggleSwitch1.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GrayWhenDisabledToggleSwitch1.Size = new System.Drawing.Size(50, 19);
-            this.GrayWhenDisabledToggleSwitch1.TabIndex = 26;
-            // 
-            // SlowAnimationToggleSwitch
-            // 
-            this.SlowAnimationToggleSwitch.Location = new System.Drawing.Point(510, 130);
-            this.SlowAnimationToggleSwitch.Name = "SlowAnimationToggleSwitch";
-            this.SlowAnimationToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SlowAnimationToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SlowAnimationToggleSwitch.Size = new System.Drawing.Size(50, 19);
-            this.SlowAnimationToggleSwitch.TabIndex = 22;
-            // 
-            // FastAnimationToggleSwitch
-            // 
-            this.FastAnimationToggleSwitch.Location = new System.Drawing.Point(252, 130);
-            this.FastAnimationToggleSwitch.Name = "FastAnimationToggleSwitch";
-            this.FastAnimationToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FastAnimationToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FastAnimationToggleSwitch.Size = new System.Drawing.Size(50, 19);
-            this.FastAnimationToggleSwitch.TabIndex = 20;
-            // 
-            // NoAnimationToggleSwitch
-            // 
-            this.NoAnimationToggleSwitch.Location = new System.Drawing.Point(11, 130);
-            this.NoAnimationToggleSwitch.Name = "NoAnimationToggleSwitch";
-            this.NoAnimationToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoAnimationToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoAnimationToggleSwitch.Size = new System.Drawing.Size(50, 19);
-            this.NoAnimationToggleSwitch.TabIndex = 18;
-            // 
-            // AllowUserChangeToggleSwitch2
-            // 
-            this.AllowUserChangeToggleSwitch2.Location = new System.Drawing.Point(11, 60);
-            this.AllowUserChangeToggleSwitch2.Name = "AllowUserChangeToggleSwitch2";
-            this.AllowUserChangeToggleSwitch2.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AllowUserChangeToggleSwitch2.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AllowUserChangeToggleSwitch2.Size = new System.Drawing.Size(50, 19);
-            this.AllowUserChangeToggleSwitch2.TabIndex = 11;
-            // 
-            // AllowUserChangeToggleSwitch1
-            // 
-            this.AllowUserChangeToggleSwitch1.Location = new System.Drawing.Point(11, 35);
-            this.AllowUserChangeToggleSwitch1.Name = "AllowUserChangeToggleSwitch1";
-            this.AllowUserChangeToggleSwitch1.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AllowUserChangeToggleSwitch1.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AllowUserChangeToggleSwitch1.Size = new System.Drawing.Size(50, 19);
-            this.AllowUserChangeToggleSwitch1.TabIndex = 10;
-            // 
             // AdvancedBehaviorFancyToggleSwitch
             // 
             this.AdvancedBehaviorFancyToggleSwitch.Location = new System.Drawing.Point(22, 380);
@@ -989,6 +1021,17 @@
             this.NormalMetroToggleSwitch.Size = new System.Drawing.Size(50, 19);
             this.NormalMetroToggleSwitch.TabIndex = 10;
             // 
+            // PlaygroundTabPage
+            // 
+            this.PlaygroundTabPage.Controls.Add(this.PlaygroundToggleSwitch);
+            this.PlaygroundTabPage.Controls.Add(this.PlaygroundPropertyGrid);
+            this.PlaygroundTabPage.Location = new System.Drawing.Point(4, 22);
+            this.PlaygroundTabPage.Name = "PlaygroundTabPage";
+            this.PlaygroundTabPage.Size = new System.Drawing.Size(870, 479);
+            this.PlaygroundTabPage.TabIndex = 3;
+            this.PlaygroundTabPage.Text = "Playground";
+            this.PlaygroundTabPage.UseVisualStyleBackColor = true;
+            // 
             // PlaygroundToggleSwitch
             // 
             this.PlaygroundToggleSwitch.Location = new System.Drawing.Point(51, 42);
@@ -1007,52 +1050,10 @@
             this.PlaygroundPropertyGrid.Size = new System.Drawing.Size(411, 479);
             this.PlaygroundPropertyGrid.TabIndex = 0;
             // 
-            // label30
+            // SimulateRestartBackgroundWorker
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(161, 372);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(115, 13);
-            this.label30.TabIndex = 22;
-            this.label30.Text = "Style = PlainAndSimple";
-            // 
-            // NormalPlainAndSimpleToggleSwitch
-            // 
-            this.NormalPlainAndSimpleToggleSwitch.BackColor = System.Drawing.Color.Transparent;
-            this.NormalPlainAndSimpleToggleSwitch.Location = new System.Drawing.Point(22, 187);
-            this.NormalPlainAndSimpleToggleSwitch.Name = "NormalPlainAndSimpleToggleSwitch";
-            this.NormalPlainAndSimpleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NormalPlainAndSimpleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NormalPlainAndSimpleToggleSwitch.Size = new System.Drawing.Size(50, 19);
-            this.NormalPlainAndSimpleToggleSwitch.TabIndex = 34;
-            // 
-            // CustomizedPlainAndSimpleToggleSwitch
-            // 
-            this.CustomizedPlainAndSimpleToggleSwitch.BackColor = System.Drawing.Color.Transparent;
-            this.CustomizedPlainAndSimpleToggleSwitch.Location = new System.Drawing.Point(238, 187);
-            this.CustomizedPlainAndSimpleToggleSwitch.Name = "CustomizedPlainAndSimpleToggleSwitch";
-            this.CustomizedPlainAndSimpleToggleSwitch.OffFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomizedPlainAndSimpleToggleSwitch.OnFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomizedPlainAndSimpleToggleSwitch.Size = new System.Drawing.Size(50, 19);
-            this.CustomizedPlainAndSimpleToggleSwitch.TabIndex = 35;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(349, 193);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(61, 13);
-            this.label31.TabIndex = 37;
-            this.label31.Text = "Customized";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(126, 193);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(40, 13);
-            this.label32.TabIndex = 36;
-            this.label32.Text = "Normal";
+            this.SimulateRestartBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.SimulateRestartBackgroundWorker_DoWork);
+            this.SimulateRestartBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.SimulateRestartBackgroundWorker_RunWorkerCompleted);
             // 
             // DemoForm
             // 

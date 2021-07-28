@@ -403,5 +403,10 @@ namespace ToggleSwitchDemo
             AnimatedGifPictureBox.Visible = false;
             AdvancedBehaviorFancyToggleSwitch.Checked = false;
         }
+
+        private void IOS5StyleToggleSwitch_CheckedChanged(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
