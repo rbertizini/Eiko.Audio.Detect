@@ -14,6 +14,9 @@ namespace Eiko.Audio.Detect
     public partial class FrmAudio : Form
     {
         int qtdSec = 0;
+        int secRfsh = 0;
+        int secAudio = 0;
+        int secAudioWait = 0;
 
         public FrmAudio()
         {
@@ -143,11 +146,51 @@ namespace Eiko.Audio.Detect
                 if (qtdSec > 0)
                     qtdSec--;
             }
+
+            //Controle de memória
+            secRfsh++;
+            if (secRfsh == 1800)
+            {
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                secRfsh = 0;
+            }
+
+            //Controle de audio
+            secAudio++;
+            if (secAudio == 3600)
+            {
+                this.Icon = Properties.Resources.icon_alert_blue;
+                picAlert.Image = Properties.Resources.alert_blue;
+                timeProc.Enabled = false;
+
+                secAudio = 0;
+                secAudioWait = 0;
+
+                timeRefresh.Enabled = true;
+            }
+        }
+
+        private void timeRefresh_Tick(object sender, EventArgs e)
+        {
+            secAudioWait++;
+
+            if (secAudioWait == 5)
+            {
+                this.Icon = Properties.Resources.icon_alert_green;
+                picAlert.Image = Properties.Resources.alert_green;
+                timeProc.Enabled = true;
+
+                timeRefresh.Enabled = false;
+            }
         }
 
         private void tgsAtivar_CheckedChanged(object sender, EventArgs e)
         {
             qtdSec = 0;
+            secRfsh = 0;
+            secAudio = 0;
+
             if (tgsAtivar.Checked == true)
             {
                 this.Icon = Properties.Resources.icon_alert_green;
@@ -174,5 +217,7 @@ namespace Eiko.Audio.Detect
             else
                 this.Size = new Size(203, 263);
         }
+
+        
     }
 }

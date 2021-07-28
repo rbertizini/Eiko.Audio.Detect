@@ -42,6 +42,7 @@ namespace Eiko.Audio.Detect
             this.btnConf = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.timeRefresh = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picAlert)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,6 +160,11 @@ namespace Eiko.Audio.Detect
             this.label4.TabIndex = 16;
             this.label4.Text = "Counter";
             // 
+            // timeRefresh
+            // 
+            this.timeRefresh.Interval = 1000;
+            this.timeRefresh.Tick += new System.EventHandler(this.timeRefresh_Tick);
+            // 
             // FrmAudio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,6 +181,7 @@ namespace Eiko.Audio.Detect
             this.Controls.Add(this.lbcount);
             this.Controls.Add(this.lbPeak);
             this.Controls.Add(this.picAlert);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmAudio";
@@ -199,6 +206,7 @@ namespace Eiko.Audio.Detect
         private System.Windows.Forms.Button btnConf;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Timer timeRefresh;
     }
 }
 
