@@ -15,6 +15,7 @@ namespace Eiko.Audio.Detect
 {
     public partial class FrmAudio : Form
     {
+        //Variáveis globais
         int qtdSec = 0;
         int secMem = 0;
         int secAudio = 0;
@@ -25,6 +26,7 @@ namespace Eiko.Audio.Detect
         float cfgLimPeak = 0;
         int cfgTpSens = 0;
 
+        //Inicialização
         public FrmAudio()
         {
             InitializeComponent();
@@ -77,6 +79,7 @@ namespace Eiko.Audio.Detect
 
         #region "Métodos"
 
+        //Configuração dos Toggles
         public void SetPropertiesForStylesTabSwitches()
         {
             tgsAtivar.Style = JCS.ToggleSwitch.ToggleSwitchStyle.Android;
@@ -131,6 +134,7 @@ namespace Eiko.Audio.Detect
             }
         }
 
+        //Processo de timer de detecção
         private void timeProc_Tick(object sender, EventArgs e)
         {
             float peakVal = 0;
@@ -229,6 +233,7 @@ namespace Eiko.Audio.Detect
             }
         }
 
+        //Processo de timer de refresh
         private void timeRefresh_Tick(object sender, EventArgs e)
         {
             secAudioWait++;
@@ -241,13 +246,16 @@ namespace Eiko.Audio.Detect
             }
         }
 
+        //Obtenção de configuração
         private void ReadConfig()
         {
+            //Leitura
             cfgTmpMem = Properties.Settings.Default.TmpMemoria;
             cfgTmpRef = Properties.Settings.Default.TmpRefresh;
             cfgLimPeak = Properties.Settings.Default.LimPeak;
             cfgTpSens = Properties.Settings.Default.TpSens;
 
+            //Exibição
             txtMemoria.Text = cfgTmpMem.ToString();
             txtRefresh.Text = cfgTmpRef.ToString();
             txtPeak.Text = cfgLimPeak.ToString();
@@ -255,24 +263,26 @@ namespace Eiko.Audio.Detect
                 tgsSens.Checked = false;
             else
                 tgsSens.Checked = true;
+
+            //Conversão
+            cfgTmpMem = cfgTmpMem * 60;
+            cfgTmpRef = cfgTmpRef * 60;
         }
 
+        //Atualização de configuração
         private void SaveConfig()
         {
-            cfgTmpMem = Int32.Parse(txtMemoria.Text);
-            cfgTmpRef = Int32.Parse(txtRefresh.Text);
-            cfgLimPeak = float.Parse(txtPeak.Text);
+            //Atualização
+            Properties.Settings.Default.TmpMemoria = Int32.Parse(txtMemoria.Text);
+            Properties.Settings.Default.TmpRefresh = Int32.Parse(txtRefresh.Text);
+            Properties.Settings.Default.LimPeak = float.Parse(txtPeak.Text);
             if (tgsSens.Checked == false)
-                cfgTpSens = 1;
+                Properties.Settings.Default.TpSens = 1;
             else
-                cfgTpSens = 2;
-
-            Properties.Settings.Default.TmpMemoria = cfgTmpMem;
-            Properties.Settings.Default.TmpRefresh = cfgTmpRef;
-            Properties.Settings.Default.LimPeak = cfgLimPeak;
-            Properties.Settings.Default.TpSens = cfgTpSens;
+                Properties.Settings.Default.TpSens = 2;
             Properties.Settings.Default.Save();
 
+            //Restart
             DesativarDeteccao();
             ReadConfig();
 
@@ -280,7 +290,7 @@ namespace Eiko.Audio.Detect
             AtivarDeteccao();
         }
 
-
+        //Desativar detecção
         private void DesativarDeteccao()
         {
             qtdSec = 0;
@@ -292,6 +302,7 @@ namespace Eiko.Audio.Detect
             timeProc.Enabled = false;
         }
 
+        //Ativar deteção
         private void AtivarDeteccao()
         {
             qtdSec = 0;
