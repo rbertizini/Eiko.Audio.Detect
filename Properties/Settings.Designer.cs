@@ -70,5 +70,17 @@ namespace Eiko.Audio.Detect.Properties {
                 this["TpSens"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CnlNome {
+            get {
+                return ((string)(this["CnlNome"]));
+            }
+            set {
+                this["CnlNome"] = value;
+            }
+        }
     }
 }

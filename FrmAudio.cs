@@ -1,4 +1,9 @@
-﻿using CSCore.CoreAudioAPI;
+﻿using CSCore;
+using CSCore.CoreAudioAPI;
+using CSCore.Codecs.WAV;
+using CSCore.SoundIn;
+using CSCore.Streams;
+using CSCore.Win32;
 using JCS;
 using System;
 using System.Collections.Generic;
@@ -10,6 +15,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
+using System.Runtime.InteropServices;
+using Microsoft.WindowsAPICodePack.Taskbar;
 
 namespace Eiko.Audio.Detect
 {
@@ -25,6 +33,22 @@ namespace Eiko.Audio.Detect
         int cfgTmpRef = 0;
         float cfgLimPeak = 0;
         int cfgTpSens = 0;
+        string cfgCnlNome = string.Empty;
+
+        private const CaptureMode CaptureMode = Eiko.Audio.Detect.CaptureMode.LoopbackCapture;
+        
+        private MMDevice _selectedDevice;
+
+        public MMDevice SelectedDevice
+        {
+            get { return _selectedDevice; }
+            set
+            {
+                _selectedDevice = value;
+                if (value != null)
+                    tgsAtivar.Enabled = true;
+            }
+        }
 
         //Inicialização
         public FrmAudio()
@@ -32,6 +56,7 @@ namespace Eiko.Audio.Detect
             InitializeComponent();
             SetPropertiesForStylesTabSwitches();
             this.Size = new Size(203, 263);
+            RefreshDevices();
             ReadConfig();
         }
 
@@ -58,22 +83,41 @@ namespace Eiko.Audio.Detect
         private void btnConf_Click(object sender, EventArgs e)
         {
             if (this.Size.Height == 263)
-                this.Size = new Size(203, 448);
+            { 
+                //this.Size = new Size(203, 448);
+                this.Size = new Size(203, 474);
+            }
             else
+            { 
                 this.Size = new Size(203, 263);
+            }
         }
 
         //Inicialização
         private void FrmAudio_Activated(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(35, 32, 35);
-            this.Icon = Properties.Resources.icon_alert_blue;
+            statusBlue();
         }
 
         //Salvara configuração
         private void btnSave_Click(object sender, EventArgs e)
         {
             SaveConfig();
+        }
+
+        private void cboxDevice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //if (cboxDevice.SelectedIndex >= 0)
+            //{
+            //    ComboboxItem Item = new ComboboxItem();
+            //    Item = (ComboboxItem)cboxDevice.SelectedItem;
+            //    SelectedDevice = (MMDevice)Item.Value;
+            //}
+            //else
+            //{
+            //    SelectedDevice = null;
+            //}
         }
 
 
@@ -120,7 +164,8 @@ namespace Eiko.Audio.Detect
         {
             using (var enumerator = new MMDeviceEnumerator())
             {
-                return enumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Console);
+                //return enumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Console);
+                return enumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Communications);
             }
         }
 
@@ -139,7 +184,7 @@ namespace Eiko.Audio.Detect
         {
             float peakVal = 0;
 
-            if (IsAudioPlaying(GetDefaultRenderDevice(), out peakVal))
+            if (IsAudioPlaying(_selectedDevice, out peakVal))
             {
                 lbPeak.Text = peakVal.ToString();
                 lbcount.Text = qtdSec.ToString();
@@ -161,13 +206,11 @@ namespace Eiko.Audio.Detect
 
                     if (qtdSec >= 3)
                     {
-                        this.Icon = Properties.Resources.icon_alert_red;
-                        picAlert.Image = Properties.Resources.alert_red;
+                        statusRed();
                     }
                     else
                     {
-                        this.Icon = Properties.Resources.icon_alert_yellow;
-                        picAlert.Image = Properties.Resources.alert_yellow;
+                        statusYellow();
                     }
                 }
 
@@ -178,8 +221,7 @@ namespace Eiko.Audio.Detect
                     {
                         if (qtdSec >= 3)
                         {
-                            this.Icon = Properties.Resources.icon_alert_red;
-                            picAlert.Image = Properties.Resources.alert_red;
+                            statusRed();
                             qtdSec = 5;
                         }
                         else
@@ -189,15 +231,13 @@ namespace Eiko.Audio.Detect
                                 qtdSec = 1;
                             }
 
-                            this.Icon = Properties.Resources.icon_alert_yellow;
-                            picAlert.Image = Properties.Resources.alert_yellow;
+                            statusYellow();
                             qtdSec++;
                         }
                     }
                     else
                     {
-                        this.Icon = Properties.Resources.icon_alert_yellow;
-                        picAlert.Image = Properties.Resources.alert_yellow;
+                        statusYellow();
                         if (qtdSec > 0)
                             qtdSec--;
                     }
@@ -205,10 +245,11 @@ namespace Eiko.Audio.Detect
             }
             else
             {
-                this.Icon = Properties.Resources.icon_alert_green;
-                picAlert.Image = Properties.Resources.alert_green;
-                if (qtdSec > 0)
-                    qtdSec--;
+                statusGreen();
+                qtdSec = 0;
+
+                lbPeak.Text = "0";
+                lbcount.Text = qtdSec.ToString();
             }
 
             //Controle de memória
@@ -233,6 +274,40 @@ namespace Eiko.Audio.Detect
             }
         }
 
+        //Status Azul
+        private void statusBlue()
+        {
+            this.Icon = Properties.Resources.icon_alert_blue;
+            picAlert.Image = Properties.Resources.alert_blue;
+        }
+
+        //Status Verde
+        private void statusGreen()
+        {
+            this.Icon = Properties.Resources.icon_alert_green;
+            picAlert.Image = Properties.Resources.alert_green;
+        }
+
+        //Status amarelo
+        private void statusYellow()
+        {
+            this.Icon = Properties.Resources.icon_alert_yellow;
+            picAlert.Image = Properties.Resources.alert_yellow;
+
+            TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.Normal, Handle);
+            TaskbarManager.Instance.SetProgressValue(0, 100, Handle);
+        }
+
+        //Status vermelho
+        private void statusRed()
+        {
+            this.Icon = Properties.Resources.icon_alert_red;
+            picAlert.Image = Properties.Resources.alert_red;
+
+            TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.Normal, Handle);
+            TaskbarManager.Instance.SetProgressValue(100, 100, Handle);
+        }
+
         //Processo de timer de refresh
         private void timeRefresh_Tick(object sender, EventArgs e)
         {
@@ -254,6 +329,7 @@ namespace Eiko.Audio.Detect
             cfgTmpRef = Properties.Settings.Default.TmpRefresh;
             cfgLimPeak = Properties.Settings.Default.LimPeak;
             cfgTpSens = Properties.Settings.Default.TpSens;
+            cfgCnlNome = Properties.Settings.Default.CnlNome;
 
             //Exibição
             txtMemoria.Text = cfgTmpMem.ToString();
@@ -263,6 +339,18 @@ namespace Eiko.Audio.Detect
                 tgsSens.Checked = false;
             else
                 tgsSens.Checked = true;
+
+            cboxDevice.SelectedIndex = -1;
+            for (int i = 0; i < cboxDevice.Items.Count; i++)
+            {
+                if (cboxDevice.Items[i].ToString() == cfgCnlNome)
+                {
+                    cboxDevice.SelectedIndex = i;
+                }
+            }
+
+            //Marcar device
+            SetDevice();
 
             //Conversão
             cfgTmpMem = cfgTmpMem * 60;
@@ -280,6 +368,7 @@ namespace Eiko.Audio.Detect
                 Properties.Settings.Default.TpSens = 1;
             else
                 Properties.Settings.Default.TpSens = 2;
+            Properties.Settings.Default.CnlNome = cboxDevice.SelectedItem.ToString();
             Properties.Settings.Default.Save();
 
             //Restart
@@ -290,6 +379,22 @@ namespace Eiko.Audio.Detect
             AtivarDeteccao();
         }
 
+        //Marcar device
+        private void SetDevice()
+        {
+            if (cboxDevice.SelectedIndex >= 0)
+            {
+                ComboboxItem Item = new ComboboxItem();
+                Item = (ComboboxItem)cboxDevice.SelectedItem;
+                SelectedDevice = (MMDevice)Item.Value;
+            }
+            else
+            {
+                SelectedDevice = null;
+                return;
+            }
+        }
+
         //Desativar detecção
         private void DesativarDeteccao()
         {
@@ -297,8 +402,7 @@ namespace Eiko.Audio.Detect
             secMem = 0;
             secAudio = 0;
 
-            this.Icon = Properties.Resources.icon_alert_blue;
-            picAlert.Image = Properties.Resources.alert_blue;
+            statusBlue();
             timeProc.Enabled = false;
         }
 
@@ -309,12 +413,80 @@ namespace Eiko.Audio.Detect
             secMem = 0;
             secAudio = 0;
 
-            this.Icon = Properties.Resources.icon_alert_green;
-            picAlert.Image = Properties.Resources.alert_green;
+            statusGreen();
             timeProc.Enabled = true;
+        }
+
+        //Obtem canais de audio disponíveis
+        private void RefreshDevices()
+        {
+            cboxDevice.Items.Clear();
+
+            using (var deviceEnumerator = new MMDeviceEnumerator())
+            using (var deviceCollection = deviceEnumerator.EnumAudioEndpoints(
+                CaptureMode == CaptureMode.Capture ? DataFlow.Capture : DataFlow.Render, DeviceState.Active))
+            {
+                foreach (var device in deviceCollection)
+                {
+                    var deviceFormat = WaveFormatFromBlob(device.PropertyStore[
+                        new PropertyKey(new Guid(0xf19f064d, 0x82c, 0x4e27, 0xbc, 0x73, 0x68, 0x82, 0xa1, 0xbb, 0x8e, 0x4c), 0)].BlobValue);
+
+                    ComboboxItem Item = new ComboboxItem();
+                    Item.Text = device.FriendlyName;
+                    //Item.Value = deviceFormat.Channels.ToString(CultureInfo.InvariantCulture);
+                    Item.Value = device;
+
+                    cboxDevice.Items.Add(Item);
+                }
+            }
+
+            //Ajustando tamanho do combobox
+            cboxDevice.DropDownWidth = DropDownWidth(cboxDevice);
+        }
+
+        //Ajusta o tamanho de exibição dos itens do combobox
+        int DropDownWidth(ComboBox myCombo)
+        {
+            int maxWidth = 0, temp = 0;
+            foreach (var obj in myCombo.Items)
+            {
+                temp = TextRenderer.MeasureText(obj.ToString(), myCombo.Font).Width;
+                if (temp > maxWidth)
+                {
+                    maxWidth = temp;
+                }
+            }
+            return maxWidth;
+        }
+        
+        //Obtenção de canais de audio
+        private static WaveFormat WaveFormatFromBlob(Blob blob)
+        {
+            if (blob.Length == 40)
+                return (WaveFormat)Marshal.PtrToStructure(blob.Data, typeof(WaveFormatExtensible));
+            return (WaveFormat)Marshal.PtrToStructure(blob.Data, typeof(WaveFormat));
         }
 
         #endregion
 
+    }
+
+    //Classe CaptureMode
+    public enum CaptureMode
+    {
+        Capture,
+        LoopbackCapture
+    }
+
+    //Classe ComboBoxItem
+    public class ComboboxItem
+    {
+        public string Text { get; set; }
+        public object Value { get; set; }
+
+        public override string ToString()
+        {
+            return Text;
+        }
     }
 }
